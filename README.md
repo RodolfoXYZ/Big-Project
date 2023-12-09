@@ -1,12 +1,10 @@
 # Big-Project
 
-/*
  * Anthony Thiago
  * Cauã Sebastian
  * Maria Helena
  * Rodolfo Rodrigo
  * Vinicius Grillo
- */
 
 Dashboard de Condições Básicas de Saúde nas Escolas com Microdados do ENEM
 Este projeto consiste em um dashboard interativo que exibe informações sobre as condições básicas de saúde nas escolas, utilizando os microdados do ENEM de 2021. O dashboard é composto pelos seguintes arquivos:
