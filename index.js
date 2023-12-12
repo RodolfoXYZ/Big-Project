@@ -1,5 +1,5 @@
 const ctx = document.getElementById("chartjs");
-
+const buttons = document.getElementsByClassName('button-select')
 const totalAlunos = document.getElementById("total");
 const selectregion = document.querySelector("select");
 const coletaBar = document.getElementsByClassName('coleta')[0];
@@ -8,7 +8,7 @@ const queimaBar = document.getElementsByClassName('queima')[0];
 const enterraBar = document.getElementsByClassName('enterra')[0];
 const publicoBar = document.getElementsByClassName('publico')[0];
 const outroBar = document.getElementsByClassName('outro')[0];
-
+const image = document.getElementById('region');
 //graphix pizza//
 
 const slice1 = document.getElementsByClassName("slice1")[0];
@@ -77,9 +77,16 @@ bars.forEach(element => {
     })
 });
 
+for(let i = 0; i < buttons.length; i++){
 
-
-selectregion.addEventListener("change", (e) => {
+buttons[i].addEventListener("click", (e) => {
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].classList.remove("selected");
+    }
+    const text = document.getElementById("select-region");
+    text.innerHTML = e.target.textContent;
+    e.target.classList.add("selected");
+    image.src = `${e.target.textContent.toLowerCase()}.png`
     coleta = 0;
     indefinido = 0;
     count_energia = 0;
@@ -91,7 +98,7 @@ selectregion.addEventListener("change", (e) => {
     energia_renovavel = 0;
     energia_publica = 0;
     energia_gerador = 0;
-    type = e.target.value;
+    type = e.target.textContent;
     agua_poco = 0;
     agua_inex = 0;
     agua_pub = 0;
@@ -193,8 +200,7 @@ selectregion.addEventListener("change", (e) => {
     outroBar.style.height = ((outro / count ) * 120) + "px";
     outroBar.children[0].children[0].innerHTML = "quantidade:" + outro;
 })
-
-
+}
 
 
 Papa.parse(csvFilePath, {

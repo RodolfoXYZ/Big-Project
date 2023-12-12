@@ -16,6 +16,14 @@
         </header>
         <aside>
             <span>Microdados ENEM</span>
+            <h2>Escolher a Região</h2>
+            <div class="buttons-section">
+                <button class="button-select">Sul</button>
+                <button class="button-select">Sudeste</button>
+                <button class="button-select">Norte</button>
+                <button class="button-select">Centro-Oeste</button>
+                <button class="button-select">Nordeste</button>
+            </div>
         </aside>
     </div>
     <main>
@@ -25,15 +33,9 @@
         </div>
         <section class="charts">
             <div class="esgotamento-sanitario">
-                <div>
+                <div class="spacing">
                     <span>ESGOTAMENTO SANITÁRIO</span>
-                    <select name="select-region" id="">
-                        <option value="Nordeste">Nordeste</option>
-                        <option value="Centro-Oeste">Centro-Oeste</option>
-                        <option value="Norte">Norte</option>
-                        <option value="Sul">Sul</option>
-                        <option value="Sudeste">Sudeste</option>
-                    </select>
+                    <span id="select-region"></span>
                 </div>
                 <div class="wrapper">
                     <div class="graphic">
@@ -135,7 +137,7 @@
             </div>
             <div class="regioes">
                 <span>REGIÕES DO BRASIL</span>
-                <img src="brasil.png" alt="">
+                <img id="region" src="brasil.png" alt="">
             </div>
             <div>
                 <canvas height="300px" width="400px" id="chartjs"></canvas>
